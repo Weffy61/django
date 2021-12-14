@@ -56,9 +56,10 @@ ROOT_URLCONF = 'geekshop.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['geekshop/templates'],
-        'APP_DIRS': True,
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',  # Набор функций для использования шаблонизатора
+        'DIRS': ['geekshop/templates'],  # Директория шаблонов
+        'APP_DIRS': True,  # Включения сканирования на шаблоны во всех папках проекта
+        #  Включение контекстных процессоров в данном случае для дебага, запросов, авторизации и сообщений
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
