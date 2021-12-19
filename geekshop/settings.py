@@ -56,9 +56,10 @@ ROOT_URLCONF = 'geekshop.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['geekshop/templates'],
-        'APP_DIRS': True,
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',  # Набор функций для использования шаблонизатора
+        'DIRS': ['geekshop/templates'],  # Директория шаблонов
+        'APP_DIRS': True,  # Включения сканирования на шаблоны во всех папках проекта
+        #  Включение контекстных процессоров в данном случае для дебага, запросов, авторизации и сообщений
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -124,6 +125,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'geekshop', 'static'),
 )
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
